@@ -6,3 +6,6 @@
 
 import os
 from pyrogram import Client, filters
+
+
+API = "https://apibu.herokuapp.com/api/y-images?query="
