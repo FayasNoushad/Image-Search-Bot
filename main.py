@@ -54,6 +54,7 @@ async def search(bot, update):
             InlineQueryResultPhoto(
                 title=update.query,
                 description=result,
+                caption="Made by @FayasNoushad",
                 photo_url=result
             )
         )
