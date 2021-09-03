@@ -52,6 +52,7 @@ async def search(bot, update):
         answers.append(
             InlineQueryResultPhoto(
                 title=update.data,
+                description=result,
                 photo_url=result
             )
         )
