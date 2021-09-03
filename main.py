@@ -22,7 +22,7 @@ API = "https://apibu.herokuapp.com/api/y-images?query="
 
 @Bot.on_inline_query()
 async def search(bot, update):
-    results = requests.get(API + update.query).json()["result"]
+    results = requests.get(API + update.query).json()["result"][30:]
     answers = []
     for result in results:
         answers.append(
