@@ -12,7 +12,7 @@ from pyrogram.types import *
 
 
 Bot = Client(
-    "Yandex-Image-Search-Bot",
+    "Image-Search-Bot",
     bot_token = os.environ["BOT_TOKEN"],
     api_id = int(os.environ["API_ID"]),
     api_hash = os.environ["API_HASH"]
@@ -24,7 +24,7 @@ API = "https://apibu.herokuapp.com/api/y-images?query="
 @Bot.on_message(filters.private & filters.command(["start"]))
 async def start(bot, update):
     await update.reply_text(
-        text=f"Hello {update.from_user.mention}, I am a yandex image search bot. You can use me in inline.\n\nMade by @FayasNoushad",
+        text=f"Hello {update.from_user.mention}, I am an image search bot. You can use me in inline.\n\nMade by @FayasNoushad",
         disable_web_page_preview=True,
         quote=True
     )
