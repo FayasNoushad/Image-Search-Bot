@@ -18,4 +18,9 @@ Bot = Client(
 API = "https://apibu.herokuapp.com/api/y-images?query="
 
 
+@Client.on_inline_query()
+async def search(bot, update):
+    data = update.data
+
+
 Bot.run()
