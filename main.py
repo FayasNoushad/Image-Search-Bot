@@ -20,6 +20,15 @@ Bot = Client(
 API = "https://apibu.herokuapp.com/api/y-images?query="
 
 
+@Bot.on_message(filters.private & filters.command(["start"]))
+async def start(bot, update):
+    await update.reply_text(
+        text=f"Hello {update.from_user.mention}, I am a yandex image search bot. You can use me in inline.\n\nMade by @FayasNoushad",
+        disable_web_page_preview=True,
+        quote=True
+    )
+
+
 @Bot.on_message(filters.private & filters.text)
 async def filter_text(bot, update):
     await update.reply_text(
