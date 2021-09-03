@@ -5,6 +5,7 @@
 # License -> https://github.com/FayasNoushad/Yandex-Image-Search-Bot/blob/main/LICENSE
 
 import os
+import requests
 from pyrogram import Client, filters
 
 
