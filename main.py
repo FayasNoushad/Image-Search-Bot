@@ -7,6 +7,7 @@
 import os
 import requests
 from pyrogram import Client, filters
+from pyrogram.types import *
 
 
 Bot = Client(
@@ -22,6 +23,15 @@ API = "https://apibu.herokuapp.com/api/y-images?query="
 @Client.on_inline_query()
 async def search(bot, update):
     data = update.data
+    results = requests.get(API + data).json()["result"]
+    answers = []
+    for result in results:
+        answers.append(
+            InlineQueryResultPhoto(
+                photo_url=result
+            )
+        )
+    await update.answer(answers)
 
 
 Bot.run()
