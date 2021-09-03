@@ -6,6 +6,7 @@
 
 import os
 import requests
+from requests.utils import requote_uri
 from pyrogram import Client, filters
 from pyrogram.types import *
 
@@ -46,7 +47,7 @@ async def filter_text(bot, update):
 
 @Bot.on_inline_query()
 async def search(bot, update):
-    results = requests.get(API + update.query).json()["result"][100:]
+    results = requests.get(API + requote_uri(update.query)).json()["result"][100:]
     answers = []
     for result in results:
         answers.append(
