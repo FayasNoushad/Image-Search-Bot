@@ -1,1 +1,22 @@
-{}
+{
+    "name": "Yandex-Image-Search-Bot",
+    "description": "A yandex image search telegram bot",
+    "repository": "https://github.com/FayasNoushad/Yandex-Image-Search-Bot",
+    "keywords": ["yandex", "image", "searcher", "telegram bot"],
+    "env": {
+        "BOT_TOKEN": {
+            "description": "Your Bot token from @Botfather"
+        },
+        "API_ID": {
+            "description": "Your API_ID from https://my.telegram.org/apps"
+        },
+        "API_HASH": {
+            "description": "Your API_HASH from https://my.telegram.org/apps"
+        }
+    },
+    "buildpacks": [
+        {
+            "url": "heroku/python"
+        }
+    ]
+}
