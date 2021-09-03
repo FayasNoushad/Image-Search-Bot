@@ -12,7 +12,7 @@ An image inline search telegram bot.
 Made with Python3
 (C) @FayasNoushad
 Copyright permission under MIT License
-License -> https://github.com/FayasNoushad/Yandex-Image-Search-Bot/blob/main/LICENSE
+License -> https://github.com/FayasNoushad/Image-Search-Bot/blob/main/LICENSE
 ```
 
 ---
@@ -24,7 +24,7 @@ License -> https://github.com/FayasNoushad/Yandex-Image-Search-Bot/blob/main/LIC
 <br/>
 
 <p align="left">
-  <a href="https://heroku.com/deploy?template=https://github.com/FayasNoushad/Yandex-Image-Search-Bot/tree/main">
+  <a href="https://heroku.com/deploy?template=https://github.com/FayasNoushad/Image-Search-Bot/tree/main">
      <img height="30px" src="https://img.shields.io/badge/Deploy_To_Heroku-blueviolet?style=for-the-badge&logo=heroku">
   </a>
 </p>
@@ -35,8 +35,8 @@ License -> https://github.com/FayasNoushad/Yandex-Image-Search-Bot/blob/main/LIC
 <br/>
 
 ```sh
-git clone https://github.com/FayasNoushad/Yandex-Image-Search-Bot/tree/main
-cd Yandex-Image-Search-Bot
+git clone https://github.com/FayasNoushad/Image-Search-Bot/tree/main
+cd Image-Search-Bot
 pip3 install -r requirements.txt
 # <Create Variables appropriately>
 python3 main.py
