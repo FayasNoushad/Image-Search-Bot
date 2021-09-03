@@ -1,6 +1,6 @@
-# Yandex-Image-Search-Bot
+# Image-Search-Bot
 
-A yandex image inline search telegram bot.
+An image inline search telegram bot.
 
 ---
 
@@ -63,4 +63,4 @@ python3 main.py
 ## Credits
 
 - [Fayas Noushad](https://github.com/FayasNoushad)
-- [Yandex Image Search API](https://apibu.herokuapp.com/api/y-images)
+- [Image Search API](https://apibu.herokuapp.com/api/y-images)
