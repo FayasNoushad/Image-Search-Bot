@@ -4,6 +4,10 @@ A yandex image inline search telegram bot.
 
 ---
 
+> **Note**: Use [Telegran picture bot](https://telegram.me/pic). That is better. Not recommending to deploy this bot.
+
+---
+
 ```
 Made with Python3
 (C) @FayasNoushad
