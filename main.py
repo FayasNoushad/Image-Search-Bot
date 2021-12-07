@@ -1,9 +1,3 @@
-# Made with python3
-# (C) @FayasNoushad
-# Copyright permission under MIT License
-# All rights reserved by FayasNoushad
-# License -> https://github.com/FayasNoushad/Image-Search-Bot/blob/main/LICENSE
-
 import os
 import requests
 from requests.utils import requote_uri
@@ -20,11 +14,18 @@ Bot = Client(
 
 API = "https://apibu.herokuapp.com/api/y-images?query="
 
+START_TEXT = """Hello {},
+I am an image search bot. You can use me in inline.
 
-@Bot.on_message(filters.private & filters.command(["start"]))
+Made by @FayasNoushad"""
+
+@Bot.on_message(
+    filters.private &
+    filters.command(["start"])
+)
 async def start(bot, update):
     await update.reply_text(
-        text=f"Hello {update.from_user.mention}, I am an image search bot. You can use me in inline.\n\nMade by @FayasNoushad",
+        text=START_TEXT.format(update.from_user.mention),
         disable_web_page_preview=True,
         quote=True
     )
@@ -52,7 +53,7 @@ async def search(bot, update):
     for result in results:
         answers.append(
             InlineQueryResultPhoto(
-                title=update.query,
+                title=update.query.lower().capitalize(),
                 description=result,
                 caption="Made by @FayasNoushad",
                 photo_url=result
