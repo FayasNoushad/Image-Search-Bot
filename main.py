@@ -1,7 +1,11 @@
 import os
 import requests
 from pyrogram import Client, filters
-from pyrogram.types import *
+from pyrogram.types import (
+    InlineKeyboardMarkup,
+    InlineKeyboardButton,
+    InlineQueryResultPhoto
+)
 
 
 Bot = Client(
@@ -21,6 +25,7 @@ Made by @FayasNoushad"""
 
 @Bot.on_message(filters.private & filters.command(["start", "help"]))
 async def start(bot, update):
+    
     await update.reply_text(
         text=START_TEXT.format(update.from_user.mention),
         disable_web_page_preview=True,
@@ -30,6 +35,7 @@ async def start(bot, update):
 
 @Bot.on_message(filters.private & filters.text)
 async def filter_text(bot, update):
+    
     await update.reply_text(
         text=f"Click the button below for searching your query.\n\nQuery: `{update.text}`",
         reply_markup=InlineKeyboardMarkup(
@@ -45,7 +51,11 @@ async def filter_text(bot, update):
 
 @Bot.on_inline_query()
 async def search(bot, update):
-    results = requests.get(API + requests.utils.requote_uri(update.query)).json()["result"][:50]
+    
+    results = requests.get(
+        API + requests.utils.requote_uri(update.query)
+    ).json()["result"][:50]
+    
     answers = []
     for result in results:
         answers.append(
@@ -56,6 +66,7 @@ async def search(bot, update):
                 photo_url=result
             )
         )
+    
     await update.answer(answers)
 
 
